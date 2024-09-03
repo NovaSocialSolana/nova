@@ -1,5 +1,5 @@
 // Define color variables for light mode
-$light-bg-color: #ffffff;  // Changed to white
+$light-bg-color: #ffffff;
 $light-text-color: #0a0a0a;
 $light-primary-color: #ecedee;
 $light-secondary-color: #2ecc71;
@@ -27,6 +27,18 @@ body {
 .app {
   min-height: 100vh;
   transition: background-color 0.3s, color 0.3s;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px; // To account for the SidebarMenu
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
 }
 
 // Navbar styles
@@ -264,6 +276,64 @@ body {
       height: 50px;
       background-color: rgba(0, 0, 0, 0.1);
       border-radius: 50%;
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background-color: var(--bg-color);
+  transform: translateX(-190px);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-color);
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+  }
+
+  nav {
+    padding-top: 60px;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        padding: 10px 20px;
+
+        a {
+          color: var(--text-color);
+          text-decoration: none;
+          font-size: 18px;
+
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
     }
   }
 }
