@@ -1,0 +1,278 @@
+// Define color variables for light mode
+$light-bg-color: #ffffff;  // Changed to white
+$light-text-color: #0a0a0a;
+$light-primary-color: #ecedee;
+$light-secondary-color: #2ecc71;
+$light-card-bg-color: #D9D9D9;
+$light-input-bg-color: #D9D9D9;
+$light-input-text-color: #333;
+
+// Define color variables for dark mode
+$dark-bg-color: #0a0a0a;
+$dark-text-color: #ffffff;
+$dark-primary-color: #3a3a3a;
+$dark-secondary-color: #2ecc71;
+$dark-card-bg-color: #2c2c2c;
+$dark-input-bg-color: #3a3a3a;
+$dark-input-text-color: #ffffff;
+
+$accent-color: #4CAF50;
+
+// Base styles
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+// Navbar styles
+.navbar {
+  padding: 10px 0;
+  transition: background-color 0.3s, color 0.3s;
+
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .nav-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-center {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .nav-right {
+    justify-content: flex-end;
+    gap: 15px;
+  }
+
+  .nav-brand {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .nav-item {
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .connect-wallet-btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .wallet-address {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .theme-toggle-btn, .user-profile-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+// Light mode styles
+.light-mode {
+  background-color: $light-bg-color;
+  color: $light-text-color;
+
+  .navbar {
+    background-color: $light-bg-color;
+    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .nav-brand, .nav-item, .theme-toggle-btn, .user-profile-btn {
+      color: $light-text-color;
+    }
+
+    .connect-wallet-btn, .wallet-address {
+      background-color: $light-primary-color;
+      color: $light-text-color;
+    }
+  }
+
+  .card, .profile-section, .pnl-section, .pfp-section, .badges-section {
+    background-color: $light-card-bg-color;
+    color: $light-text-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  input[type="text"], input[type="search"] {
+    background-color: $light-input-bg-color;
+    color: $light-input-text-color;
+    border: 1px solid #ccc;
+  }
+
+  .search-button {
+    background-color: $light-input-bg-color;
+    color: $light-text-color;
+  }
+
+  .address-box {
+    background-color: $light-primary-color;
+  }
+
+  .copy-btn, .edit-btn, .add-social-btn {
+    background-color: $light-secondary-color;
+    color: $light-bg-color;
+  }
+}
+
+// Dark mode styles
+.dark-mode {
+  background-color: $dark-bg-color;
+  color: $dark-text-color;
+
+  .navbar {
+    background-color: $dark-bg-color;
+    // box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+
+    .nav-brand, .nav-item, .theme-toggle-btn, .user-profile-btn {
+      color: $dark-text-color;
+    }
+
+    .connect-wallet-btn, .wallet-address {
+      background-color: $dark-primary-color;
+      color: $dark-text-color;
+    //   background-color: lighten($dark-bg-color, 10%);
+    //   color: $dark-text-color;
+    // 
+    }
+  }
+
+  .card, .profile-section, .pnl-section, .pfp-section, .badges-section {
+    background-color: $dark-card-bg-color;
+  }
+
+  input[type="text"], input[type="search"] {
+    background-color: $dark-input-bg-color;
+    color: $dark-input-text-color;
+    border: 1px solid #555;
+  }
+
+  .search-button {
+    background-color: $dark-primary-color;
+    color: $dark-text-color;
+  }
+
+  .address-box {
+    background-color: lighten($dark-card-bg-color, 5%);
+  }
+
+  .copy-btn, .edit-btn, .add-social-btn {
+    background-color: $dark-secondary-color;
+    color: $dark-text-color;
+  }
+}
+
+// Common component styles
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+
+  input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .search-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+}
+
+.profile-section, .pnl-section, .pfp-section, .badges-section {
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.address-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.copy-btn, .edit-btn, .add-social-btn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pnl-chart, .pfp-image {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badges-section {
+  .badge-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+
+    .badge {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+    }
+  }
+}
+
+// Utility classes
+.mt-20 {
+  margin-top: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
