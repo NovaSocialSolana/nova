@@ -1,6 +1,6 @@
 <h1 align="center" style="border-bottom: none">
     <b>
-        <a href="https://www.nova.gg">nova.gg</a><br>
+        <a href="https://www.nova.meme">Nova.Meme</a><br>
     </b>
     ⭐️  The Open Source Alternative To Solscan  ⭐️ <br>
 </h1>
@@ -13,7 +13,7 @@ Show who you are from your actions on the blockchain.
 </p>
 
 <p align="center">
-    <a href="https://www.nova.gg"><b>Website</b></a> •
+    <a href="https://www.nova.meme"><b>Website</b></a> •
     <a href="https://discord.gg/nova"><b>Discord</b></a> •
     <a href="https://twitter.com/nova"><b>Twitter</b></a>
 </p>
