@@ -34,11 +34,78 @@ body {
   display: flex;
   flex-direction: column;
   padding-left: 60px; // To account for the SidebarMenu
+  width: calc(100% - 60px); // Subtract the width of the sidebar
 }
 
 main {
   flex-grow: 1;
   padding: 20px;
+}
+
+.home {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .welcome-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+  }
+
+  .carousel-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .carousel-slide {
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .legend {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      bottom: 40px;
+      color: #fff;
+      font-size: 14px;
+      padding: 10px;
+      position: absolute;
+      width: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// Overriding some carousel styles
+.carousel .control-arrow {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: auto;
+  opacity: 1;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right: 8px solid #fff;
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left: 8px solid #fff;
 }
 
 // Navbar styles
@@ -337,6 +404,8 @@ main {
     }
   }
 }
+
+
 
 // Utility classes
 .mt-20 {

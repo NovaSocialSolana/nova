@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import Home from './components/Home';
+import Profile from './components/Profile';
 import Leaderboard from './components/Leaderboard';
 import TradingDashboard from './components/TradingDashboard';
 import SidebarMenu from './components/SidebarMenu';
@@ -34,6 +35,7 @@ function AppContent() {
             <div className="navbar-content">
               <div className="nav-section">
                 <Link to="/" className="nav-brand">NOVA</Link>
+                <Link to="/profile" className="profile-page"></Link>
               </div>
               <div className="nav-section nav-center">
                 <Link to="/" className="nav-item">Home</Link>
@@ -58,6 +60,7 @@ function AppContent() {
           <main>
             <Routes>
               <Route path="/" element={<Home userData={userData} />} />
+              <Route path="/profile" element={<Profile userData={userData} />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
               <Route path="/wallet-analyzer" element={<TradingDashboard />} />
             </Routes>

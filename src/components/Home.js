@@ -1,27 +1,32 @@
 import React from 'react';
-import Username from './Username';
-import SearchBar from './SearchBar';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { useTheme } from '../contexts/ThemeContext';
 
-function Home({ userData }) {
+function Home() {
+  const { darkMode } = useTheme();
+
+  const carouselItems = [
+    { title: "Top Trader of the Week", image: "/placeholder-image.jpg", description: "Trader XYZ with 500% ROI" },
+    { title: "Highest PNL", image: "/placeholder-image.jpg", description: "$1,000,000 in profits" },
+    // Add more items as needed
+  ];
+
   return (
-    <div className="home">
-      <SearchBar />
-      <Username 
-        username={userData?.username || "Mock User"}
-        address={userData?.address || "0x1234...5678"}
-        views={userData?.views || 100}
-      />
-      <div className="pnl-section">
-        <h3>PNL</h3>
-        {/* Add PNL content here */}
-      </div>
-      <div className="pfp-section">
-        <h3>PFP</h3>
-        {/* Add PFP content here */}
-      </div>
-      <div className="badges-section">
-        <h3>Badges</h3>
-        {/* Add Badges content here */}
+    <div className={`home ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+      <h1 className="welcome-title">Welcome to Nova</h1>
+      <div className="carousel-container">
+        <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} autoPlay={true} interval={5000}>
+          {carouselItems.map((item, index) => (
+            <div key={index} className="carousel-slide">
+              <img src={item.image} alt={item.title} />
+              <div className="legend">
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </Carousel>
       </div>
     </div>
   );
