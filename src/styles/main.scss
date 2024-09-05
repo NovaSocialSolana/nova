@@ -270,8 +270,11 @@ main {
 
 // Common component styles
 .home {
-  max-width: 800px;
   margin: 0 auto;
+  padding: 20px;
+}
+
+.HomePage{
   padding: 20px;
 }
 
@@ -414,4 +417,13 @@ main {
 
 .text-center {
   text-align: center;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
 }

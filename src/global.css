@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+html, body, #root {
+  height: 100%;
+  @apply bg-gray-900;
+}
+
+.sidebar-color{
+    background-color: #0f1623;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
