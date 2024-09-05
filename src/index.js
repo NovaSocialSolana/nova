@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';  // Make sure this import is correct
+import { BrowserRouter } from 'react-router-dom';  // Import BrowserRouter
+import App from './App';
 import './styles/main.scss';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
-console.log('Rendering App component:', App);  // Add this line for debugging
+console.log('Rendering App component:', App);  // Debugging line

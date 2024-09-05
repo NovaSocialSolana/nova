@@ -4,12 +4,12 @@ const flowbite = require("flowbite-react/tailwind");
 
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", flowbite.content(),
+    "./src/**/*.{js,jsx,ts,tsx}", './node_modules/preline/preline.js', flowbite.content(),
   ],
   theme: {
     extend: {},
   },
   plugins: [
-  require('@tailwindcss/forms'), flowbite.plugin(),
+  require('@tailwindcss/forms'), require('preline/plugin'), flowbite.plugin(),
   ], 
 }

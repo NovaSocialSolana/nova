@@ -1,19 +1,30 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import './global.css';
-import Deployments from './components/Deployments';
 
-// import Projects from './components/Projects';
-// import Activity from './components/Activity';
-// import Domains from './components/Domains';
-// import Usage from './components/Usage';
-// import Settings from './components/Settings';
+// Import Preline
+import 'preline/preline';
+
+// Define the HSStaticMethods interface (similar to the tutorial)
+declare global {
+  interface Window {
+    HSStaticMethods: {
+      autoInit: () => void;
+    };
+  }
+}
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.HSStaticMethods?.autoInit();
+  }, [location.pathname]);
+
   return (
-    <Router>
+
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,7 +36,7 @@ function App() {
           <Route path="/settings" element={<Home />} />
         </Routes>
       </Layout>
-    </Router>
+
   );
 }
 

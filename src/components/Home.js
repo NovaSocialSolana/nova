@@ -1,5 +1,6 @@
 import React from 'react';
 import DataCards from './DataCards';
+import CryptoTable from './CryptoTable';
 import { NewCarousel } from './NewCarousel';
 import { UserCard, UserCardRow } from './UserCard';
 import { Carousel } from 'react-responsive-carousel';
@@ -17,11 +18,14 @@ function Home() {
 
   return (
     <div className="HomePage">
-            <NewCarousel />
+            {/* <NewCarousel />
       <div className="flex justify-center">
         
         <UserCardRow />
-      </div>
+
+      </div> */}
+
+{/* <CryptoTable /> */}
     </div>
   );
   
