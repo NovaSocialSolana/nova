@@ -12,4 +12,5 @@ module.exports = {
   plugins: [
   require('@tailwindcss/forms'), require('preline/plugin'), flowbite.plugin(),
   ], 
+  darkMode: 'class',
 }

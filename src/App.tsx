@@ -1,43 +1,24 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import React from 'react';
 import Layout from './components/Layout';
-import Home from './components/Home';
-import './global.css';
 
-// Import Preline
-import 'preline/preline';
-
-// Define the HSStaticMethods interface (similar to the tutorial)
-declare global {
-  interface Window {
-    HSStaticMethods: {
-      autoInit: () => void;
-    };
-  }
-}
-
-function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.HSStaticMethods?.autoInit();
-  }, [location.pathname]);
-
+const App: React.FC = () => {
   return (
-
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Home />} />
-          <Route path="/deployments" element={<Home />} />
-          <Route path="/activity" element={<Home />} />
-          <Route path="/domains" element={<Home />} />
-          <Route path="/usage" element={<Home />} />
-          <Route path="/settings" element={<Home />} />
-        </Routes>
-      </Layout>
-
+    <Layout>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+        <div className="border-2 border-dashed border-gray-300 rounded-lg dark:border-gray-600 h-32 md:h-64"></div>
+        <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"></div>
+        <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"></div>
+        <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"></div>
+      </div>
+      <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-96 mb-4"></div>
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"></div>
+        <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"></div>
+        <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"></div>
+        <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"></div>
+      </div>
+    </Layout>
   );
-}
+};
 
 export default App;
