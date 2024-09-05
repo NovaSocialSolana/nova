@@ -1,5 +1,9 @@
 import React, { ReactNode } from 'react';
 import Shell from './Shell';
+import { Link } from 'react-router-dom';
+import Home from './Home';
+
+
 
 interface LayoutProps {
   children: ReactNode;
